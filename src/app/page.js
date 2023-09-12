@@ -14,8 +14,24 @@ export default function Home() {
       titulo: "Bull Terrier",
       nota: 8.9,
       poster: "https://cdn2.thedogapi.com/images/IdxyFpJdv.jpg"
+    },
+    {
+      titulo: "Bull Terrier",
+      nota: 8.9,
+      poster: "https://cdn2.thedogapi.com/images/r1f_ll5VX_1280.jpg"
+    },
+    {
+      titulo: "Bull Terrier",
+      nota: 8.9,
+      poster: "https://cdn2.thedogapi.com/images/fqYLZ9MFz.jpg"
+    },
+    {
+      titulo: "Bull Terrier",
+      nota: 8.9,
+      poster: "https://cdn2.thedogapi.com/images/9HvLkpfQz.jpg"
     }
   ]
+
 
   return (
     /*<> é a tag fragment só pra nao */
