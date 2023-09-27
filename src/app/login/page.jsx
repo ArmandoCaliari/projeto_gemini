@@ -5,6 +5,7 @@ import loginimage from "@/images/login.avif"
 import { useState} from "react";
 import { useRouter} from "next/navigation"
 import { toast } from "react-hot-toast";
+import { serverLogin } from "@/actions/user";
 
 export default function Login(){
 
@@ -16,6 +17,7 @@ export default function Login(){
     function login(e){
         e.preventDefault()
         if (email=="teste@gmail.com" && senha =="123"){
+            serverLogin()
             push("/")
         }else{
             toast.error("Dados Inválidos")
@@ -29,7 +31,11 @@ export default function Login(){
         <>
             <div className="flex ">
                 <aside className="h-screen">
-                    <Image src={loginimage} className="hidden lg:flex h-screen w-auto object-over" ></Image>
+                <Image
+                    src={loginimage}
+                    alt=""
+                    className="hidden lg:flex h-screen w-auto object-over"
+                />
                 </aside>
                 <main className="flex flex-col justify-center items-center p-4 h-screen w-full">
                     <h2>AdoteUmDog</h2>

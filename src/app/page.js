@@ -1,70 +1,47 @@
 import Card from "@/components/Card";
 import Tittle from "@/components/Tittle";
+import Navbar from "@/components/navbar";
+
 
 export default function Home() {
-
   const filmes = [
     {
       titulo: "Gnpm iolden",
       nota: 7.3,
-      poster: "https://cdn2.thedogapi.com/images/oUFtdaSw1.jpg"
-      // https://place-hold.it/150x220/600/fff
+      poster: "https://cdn2.thedogapi.com/images/oUFtdaSw1.jpg",
     },
     {
       titulo: "Bull Terrier",
       nota: 8.9,
-      poster: "https://cdn2.thedogapi.com/images/IdxyFpJdv.jpg"
+      poster: "https://cdn2.thedogapi.com/images/IdxyFpJdv.jpg",
+    },
+    {
+      titulo: "Nop",
+      nota: 8.9,
+      poster: "https://cdn2.thedogapi.com/images/r1f_ll5VX_1280.jpg",
     },
     {
       titulo: "Bull Terrier",
       nota: 8.9,
-      poster: "https://cdn2.thedogapi.com/images/r1f_ll5VX_1280.jpg"
+      poster: "https://cdn2.thedogapi.com/images/fqYLZ9MFz.jpg",
     },
     {
       titulo: "Bull Terrier",
       nota: 8.9,
-      poster: "https://cdn2.thedogapi.com/images/fqYLZ9MFz.jpg"
-    },
-    {
-      titulo: "Bull Terrier",
-      nota: 8.9,
-      poster: "https://cdn2.thedogapi.com/images/9HvLkpfQz.jpg"
+      poster: "https://cdn2.thedogapi.com/images/9HvLkpfQz.jpg",
     }
   ]
 
-
+  
   return (
-    /*<> é a tag fragment só pra nao */
     <>
-      <nav className="p-4 bg-slate-800 flex gap-20">
-        <ul>
-          <li>
-            <h1 className="text-slate-100">AdoteUMDog</h1>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="" className="text-slate-100">Guarda</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="" className="text-slate-100">Pastoreiro</a>
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <a href="" className="text-slate-100">Caseiro</a>
-          </li>
-        </ul>
-        
-      </nav>
+      <Navbar/>
       <Tittle>Populares</Tittle>
 
+      <div className='flex flex-wrap'>
+        {filmes.map((filme, index) => <Card key={index} filme={filme} /> )}
+      </div>
 
-      <section className="flex flex-wrap">
-        {filmes.map(filme => <Card filme={filme}/> )}
-      </section>
       {/* <section className="flex flex-wrap">
         {filmes.map((filme) => {
           return <CardFilme filme={filme}/>
