@@ -1,36 +1,20 @@
+"use client"
 import Card from "@/components/Card";
 import Tittle from "@/components/Tittle";
 import Navbar from "@/components/navbar";
-
+import React, { useEffect, useState } from 'react';
 
 export default function Home() {
-  const filmes = [
-    {
-      titulo: "Gnpm iolden",
-      nota: 7.3,
-      poster: "https://cdn2.thedogapi.com/images/oUFtdaSw1.jpg",
-    },
-    {
-      titulo: "Bull Terrier",
-      nota: 8.9,
-      poster: "https://cdn2.thedogapi.com/images/IdxyFpJdv.jpg",
-    },
-    {
-      titulo: "Nop",
-      nota: 8.9,
-      poster: "https://cdn2.thedogapi.com/images/r1f_ll5VX_1280.jpg",
-    },
-    {
-      titulo: "Bull Terrier",
-      nota: 8.9,
-      poster: "https://cdn2.thedogapi.com/images/fqYLZ9MFz.jpg",
-    },
-    {
-      titulo: "Bull Terrier",
-      nota: 8.9,
-      poster: "https://cdn2.thedogapi.com/images/9HvLkpfQz.jpg",
-    }
-  ]
+  // commit
+  const [filmes, setFilmes] = useState([]);
+
+  useEffect(() => {
+    // Faça uma solicitação GET à API simulada
+    fetch('http://localhost:3001/filmes')
+      .then((response) => response.json())
+      .then((data) => setFilmes(data))
+      .catch((error) => console.error('Erro ao buscar dados:', error));
+  }, []);
 
   
   return (
@@ -39,8 +23,8 @@ export default function Home() {
       <Tittle>Populares</Tittle>
 
       <div className='flex flex-wrap'>
-        {filmes.map((filme, index) => <Card key={index} filme={filme} /> )}
-      </div>
+      {filmes.map((filme, index) => <Card key={index} filme={filme} /> )}
+    </div>
 
       {/* <section className="flex flex-wrap">
         {filmes.map((filme) => {
@@ -49,7 +33,6 @@ export default function Home() {
       </section> */}
       <Tittle>Pequeno-Porte</Tittle>
       <Tittle>Grande-Porte</Tittle>
-      <h1>Teste</h1>
     </>
   )
 }

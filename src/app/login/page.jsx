@@ -55,7 +55,7 @@ export default function Login(){
                         // o que foi digitado na caixa de texto é setado no valor
                         onChange={(e) => setSenha(e.target.value)}
                         className="bg-slate-600 p-1 rounded"/>
-                        <button className="bg-pink-600 p-2 rounded mt-2">Entrar</button>
+                        <button className="bg-yellow-400 p-2 rounded mt-2">Entrar</button>
                     </form>
                 </main>
             </div>
